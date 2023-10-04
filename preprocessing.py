@@ -74,6 +74,19 @@ hot_cols = ['country']
 
 ### drop class ###
 
+class ColumnSlicer:
+    def __init__(self, new_slice_list):
+        self.new_slice_list = new_slice_list
+    def fit(self, df, y=None):
+        pass
+    def transform(self, df, y=None):
+        [[r0, r1], [c0, c1]] = self.new_slice_list 
+        df_new = df.iloc[r0:r1, c0:c1]
+        return df_new
+    def fit_transform(self, df, y=None):
+        self.fit(df)
+        return self.transform(df)
+
 class ColumnDropper:
     def __init__(self, to_drop_columns):
         self.to_drop_columns = to_drop_columns
