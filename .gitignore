@@ -2,3 +2,7 @@ data/*
 .amwag/*
 requirements
 convert_table.ipynb
+
+__pycache__/
+*.py[cod]
+*$py.class
