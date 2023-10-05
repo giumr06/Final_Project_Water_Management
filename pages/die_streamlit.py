@@ -39,6 +39,8 @@ def create_barplot(Y_true, Y_pred, Y_new):
 X = load_pickle("data_2020")
 Y_true = load_pickle("targets_2020")
 
+n_paras = st.selectbox
+
 country = st.selectbox("choose country", X.country)
 para_list = X.drop(["country", "year"], axis=1).columns.tolist()
 para_0 = st.selectbox("choose parameter", para_list)
