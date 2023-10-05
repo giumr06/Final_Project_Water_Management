@@ -49,7 +49,7 @@ model_dict = load_pickle('model')
 X_country = X.query("country == @country")
 X_new = X_country.copy(deep=True)
 X_new[para_0].iloc[0] += para_0_val*X_new[para_0].iloc[0]
-print(X_new[para_0].iloc[0])
+# print(X_new[para_0].iloc[0])
 Y_true_c = Y_true.query("country == @country")
 
 Y_pred = pd.DataFrame({k: model_dict[k].predict(X_country) for k in model_dict})
