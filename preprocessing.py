@@ -295,12 +295,6 @@ def get_pre_split_processor():
 
 def get_full_preprocessor(full_column_list, hot=True):
 
-    # num_pipeline = Pipeline([
-    #     ('scaling', StandardScaler())
-    #     ])
-    # cat_pipeline = Pipeline([
-    #     ('ohe', OneHotEncoder(drop='first', sparse_output=False))
-    #     ])
     hot_columns = ColumnTransformer([
         ('num', StandardScaler(), scaled_cols),
         ('cat', OneHotEncoder(drop='first', sparse_output=False), hot_cols),
