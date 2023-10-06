@@ -39,6 +39,8 @@ def create_barplot(Y_true, Y_pred, Y_new):
 X = load_pickle("data_2020")
 Y_true = load_pickle("targets_2020")
 
+n_paras = st.selectbox
+
 country = st.selectbox("choose country", X.country)
 para_list = X.drop(["country", "year"], axis=1).columns.tolist()
 para_0 = st.selectbox("choose parameter", para_list)
@@ -49,7 +51,7 @@ model_dict = load_pickle('model')
 X_country = X.query("country == @country")
 X_new = X_country.copy(deep=True)
 X_new[para_0].iloc[0] += para_0_val*X_new[para_0].iloc[0]
-print(X_new[para_0].iloc[0])
+# print(X_new[para_0].iloc[0])
 Y_true_c = Y_true.query("country == @country")
 
 Y_pred = pd.DataFrame({k: model_dict[k].predict(X_country) for k in model_dict})
