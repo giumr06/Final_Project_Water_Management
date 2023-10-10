@@ -6,10 +6,17 @@ from app_plotting.app_plotting import *
 from sklearn import set_config
 set_config(transform_output="pandas")
 
-st.write("Welcome to project Amwag:")
+st.set_page_config(
+        page_title="model prediction",
+        page_icon="🐳",
+        layout="centered"
+)
 
-X = pd.read_csv("data_2020.csv", index_col=0)
-Y_true = pd.read_csv("targets_2020.csv", index_col=0)
+st.markdown("## Welcome to project Amwag:")
+st.write("Here you can see forecasts...")
+
+X = pd.read_csv("./data/data_2020.csv", index_col=0)
+Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
 
 country = st.selectbox("choose country", X.country)
 para_list = X.drop(["country", "year"], axis=1).columns.tolist()
@@ -24,4 +31,11 @@ Y_pred = get_single_predictions(model_dict, X_country)
 Y_new = get_single_predictions(model_dict, X_new)
 
 my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
+
+colors = ['#d1e4d1', '#79a8a9', '#1f4e5f']
+
+my_fig.update_traces(marker_color=colors[0], selector=dict(name='Total Population with access to safe drinking water'))
+my_fig.update_traces(marker_color=colors[1], selector=dict(name='GDP per capita'))
+my_fig.update_traces(marker_color=colors[2], selector=dict(name='Water Stress'))
+
 st.plotly_chart(my_fig, use_container_width=True)

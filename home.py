@@ -7,13 +7,12 @@ st.set_page_config(
         layout="centered",
         initial_sidebar_state="expanded"
 )
-
+#
 show_pages(
     [
-        Page("./pages/die_streamlit.py", "Original Page", "🌑"),
         Page("home.py", "Home", "🌊"),
-        Page("./pages/model_prediction.py", "Model Prediction", "🐳"),
-        #Page("./pages/time_series_prediction.py", "Time Series Prediction", "🐬")
+        Page("./pages/model.py", "Model Prediction", "🐳"),
+        Page("./pages/forecast.py", "Time Series Prediction", "🐬")
     ]
 )
 ##
@@ -39,7 +38,7 @@ if home_page == 'About us':
              
              [Giulia Miranda Reis](https://www.linkedin.com/in/giuliamirandareis/) 
            
-             Uta Bösch
+             [Uta Bösch](https://www.linkedin.com/)
            
              [Mike Moner](https://www.linkedin.com/in/mike-moner/)
            
