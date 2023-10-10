@@ -15,9 +15,9 @@ st.set_page_config(
         layout="centered"
 )
 
-st.header("Welcome to Amwag Project")
-st.write("Model Predictor:")
+st.markdown("# Model Predictor:")
 
+@st.cache_data
 def load_pickle(pk):
     with open(pk+'.pkl', 'rb') as file:
         loaded_file = pickle.load(file)
@@ -48,25 +48,18 @@ Y_true = load_pickle("targets_2020")
 
 n_paras = st.selectbox
 
-country = st.selectbox("Choose a Country", X.country)
+country = st.selectbox("choose country", X.country)
 para_list = X.drop(["country", "year"], axis=1).columns.tolist()
-
-# list_02 = []
-# for i in para_list:
-#             i = i.replace("_"," ")
-#             i = i.capitalize()
-#             list_02.append(i)
 
 para_0 = st.selectbox("Choose parameter", para_list)
 para_0_val = st.slider("Fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
-
-model_dict = load_pickle('model')
-
 X_country = X.query("country == @country")
+
 X_new = X_country.copy(deep=True)
 X_new[para_0].iloc[0] += para_0_val*X_new[para_0].iloc[0]
-# print(X_new[para_0].iloc[0])
 Y_true_c = Y_true.query("country == @country")
+
+model_dict = load_pickle('model')
 
 Y_pred = pd.DataFrame({k: model_dict[k].predict(X_country) for k in model_dict})
 Y_new = pd.DataFrame({k: model_dict[k].predict(X_new) for k in model_dict})
@@ -80,9 +73,3 @@ my_fig.update_traces(marker_color=colors[1], selector=dict(name='GDP per capita'
 my_fig.update_traces(marker_color=colors[2], selector=dict(name='Water Stress'))
 
 st.plotly_chart(my_fig, use_container_width=True)
-       
-# st.write(X_country)
-# st.write(df_prediction)
-
-
-
