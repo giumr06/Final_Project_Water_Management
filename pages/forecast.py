@@ -19,6 +19,10 @@ year = st.selectbox("choose year", X.year.unique())
 
 para_list = X.drop(["country", "year"], axis=1).columns.tolist()
 para_0 = st.selectbox("choose parameter", para_list)
+
+plot_options = ["bar","line"]
+plot = st.selectbox(label="choose your board", options=plot_options)
+
 para_0_val = st.slider("fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
 
 model_dict = load_pickle('model')
@@ -32,15 +36,18 @@ Y_new = get_single_predictions(model_dict, X_new)
 Y_ts_pred = get_timeseries_predictions(model_dict, X_ts)
 Y_ts_new = get_timeseries_predictions(model_dict, X_ts_new)
 
-my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
 
-colors = ['#d1e4d1', '#79a8a9', '#1f4e5f']
+if plot == 'bar':
+    my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
 
-my_fig.update_traces(marker_color=colors[0], selector=dict(name='Total Population with access to safe drinking water'))
-my_fig.update_traces(marker_color=colors[1], selector=dict(name='GDP per capita'))
-my_fig.update_traces(marker_color=colors[2], selector=dict(name='Water Stress'))
+    colors = ['#d1e4d1', '#79a8a9', '#1f4e5f']
 
-st.plotly_chart(my_fig, use_container_width=True)
+    my_fig.update_traces(marker_color=colors[0], selector=dict(name='Total Population with access to safe drinking water'))
+    my_fig.update_traces(marker_color=colors[1], selector=dict(name='GDP per capita'))
+    my_fig.update_traces(marker_color=colors[2], selector=dict(name='Water Stress'))
 
-my_fig = create_timeline(Y_ts_true, Y_ts_pred, Y_ts_new, Y_ts_past)
-st.plotly_chart(my_fig, use_container_width=True)
+    st.plotly_chart(my_fig, use_container_width=True)
+    
+if plot == 'line':
+    my_fig = create_timeline(Y_ts_true, Y_ts_pred, Y_ts_new, Y_ts_past)
+    st.plotly_chart(my_fig, use_container_width=True)
