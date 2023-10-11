@@ -32,10 +32,4 @@ Y_new = get_single_predictions(model_dict, X_new)
 
 my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
 
-colors = ['#d1e4d1', '#79a8a9', '#1f4e5f']
-
-my_fig.update_traces(marker_color=colors[0], selector=dict(name='Total Population with access to safe drinking water'))
-my_fig.update_traces(marker_color=colors[1], selector=dict(name='GDP per capita'))
-my_fig.update_traces(marker_color=colors[2], selector=dict(name='Water Stress'))
-
 st.plotly_chart(my_fig, use_container_width=True)

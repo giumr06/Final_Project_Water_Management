@@ -20,6 +20,12 @@ def create_barplot(Y_true, Y_pred, Y_new):
         name="Water Stress"),
         row=1, col=3)
 
+    colors = ['#d1e4d1', '#79a8a9', '#1f4e5f']
+
+    fig.update_traces(marker_color=colors[0], selector=dict(name='Total Population with access to safe drinking water'))
+    fig.update_traces(marker_color=colors[1], selector=dict(name='GDP per capita'))
+    fig.update_traces(marker_color=colors[2], selector=dict(name='Water Stress'))
+
     return fig
 
 def create_timeline(Y_true, Y_pred, Y_new, Y_past):
