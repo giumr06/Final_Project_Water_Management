@@ -1,7 +1,7 @@
 import streamlit as st
-from app_utilities.preprocessing import *
-from app_utilities.app_utilities import *
-from app_plotting.app_plotting import *
+from amwag.app_utilities.preprocessing import *
+from amwag.app_utilities.app_utilities import *
+from amwag.app_plotting.app_plotting import *
 
 from sklearn import set_config
 set_config(transform_output="pandas")
