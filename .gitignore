@@ -3,6 +3,6 @@ data/*
 requirements
 convert_table.ipynb
 
-__pycache__/
+*/__pycache__/*
 *.py[cod]
 *$py.class
