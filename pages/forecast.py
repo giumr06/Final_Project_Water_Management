@@ -2,9 +2,9 @@ import streamlit as st
 from app_utilities.preprocessing import *
 from app_utilities.app_utilities import *
 from app_plotting.app_plotting import *
-
 from sklearn import set_config
 set_config(transform_output="pandas")
+
 
 st.markdown("## Welcome to project Amwag:")
 st.write("Here you can see forecasts...")
@@ -13,17 +13,13 @@ X = pd.read_csv("./data/forecast_2021_2025.csv", index_col=0)
 Y_true = pd.read_csv("./data/forecast_2021_2025_targets.csv", index_col=0)
 Y_past = pd.read_csv("./data/targets_over_years.csv", index_col=0)
 
-country = st.selectbox("choose country", X.country.unique())
+country = st.sidebar.selectbox("choose country", X.country.unique())
 
-year = st.selectbox("choose year", X.year.unique())
+year = st.sidebar.selectbox("choose year", X.year.unique())
 
 para_list = X.drop(["country", "year"], axis=1).columns.tolist()
-para_0 = st.selectbox("choose parameter", para_list)
-
-plot_options = ["bar","line"]
-plot = st.selectbox(label="choose your board", options=plot_options)
-
-para_0_val = st.slider("fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
+para_0 = st.sidebar.selectbox("choose parameter", para_list)
+para_0_val = st.sidebar.slider("fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
 
 model_dict = load_pickle('model')
 
