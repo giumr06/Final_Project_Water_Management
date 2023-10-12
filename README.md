@@ -3,8 +3,8 @@
 
 - This project was proposed as the final project of the Data Science boot camp from Spiced Academy (10.2023).
 
-- Our main goals are:  \n
-    I- To create an interactive website that can predict possible effects on targets by tweaking parameters. \n
+- Our main goals are:  \
+    I- To create an interactive website that can predict possible effects on targets by tweaking parameters. 
              
     II- Make a presentation on correlations and clustering of countries based on water use habits.
 
