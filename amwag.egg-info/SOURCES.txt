@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+amwag/__init__.py
+amwag.egg-info/PKG-INFO
+amwag.egg-info/SOURCES.txt
+amwag.egg-info/dependency_links.txt
+amwag.egg-info/not-zip-safe
+amwag.egg-info/top_level.txt
