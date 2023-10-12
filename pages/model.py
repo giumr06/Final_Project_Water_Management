@@ -12,9 +12,8 @@ st.set_page_config(
         layout="centered"
 )
 
-st.markdown("## Welcome to project Amwag:")
-st.write("Here you can see forecasts...")
-
+st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Prediction </h1>", unsafe_allow_html=True)
+st.write("     ")
 X = pd.read_csv("./data/data_2020.csv", index_col=0)
 Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
 
@@ -36,3 +35,6 @@ Y_new = get_single_predictions(model_dict, X_new)
 my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
 
 st.plotly_chart(my_fig, use_container_width=True)
+left_co,cent_co,cent_2_co,right_co,right_2_co,last_co = st.columns(6)
+with last_co:
+        st.image("./app_images/wave_2.png",width=175)

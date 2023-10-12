@@ -6,7 +6,7 @@ from sklearn import set_config
 set_config(transform_output="pandas")
 
 
-st.markdown("## Welcome to project Amwag:")
+st.markdown("## The Amwag overtime:")
 st.write("Here you can see forecasts from multivariate and univariate methods")
 
 X_fc = pd.read_csv("./data/forecast_2021_2025.csv", index_col=0)
