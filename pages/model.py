@@ -18,9 +18,12 @@ st.write("Here you can see forecasts...")
 X = pd.read_csv("./data/data_2020.csv", index_col=0)
 Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
 
+var_name_dict = create_var_name_dict(X)
+
 country = st.selectbox("choose country", X.country)
-para_list = X.drop(["country", "year"], axis=1).columns.tolist()
+para_list = var_name_dict.keys()
 para_0 = st.selectbox("choose parameter", para_list)
+para_0 = var_name_dict[para_0]
 para_0_val = st.slider("fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
 
 model_dict = load_pickle('model')
