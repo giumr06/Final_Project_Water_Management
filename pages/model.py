@@ -13,15 +13,16 @@ st.set_page_config(
 )
 
 st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Module </h1>", unsafe_allow_html=True)
+st.markdown("<h6 style='text-align: center;'> Here you can see the module prediction </h6>", unsafe_allow_html=True)
 st.write("     ")
 X = pd.read_csv("./data/data_2020.csv", index_col=0)
 Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
 
 var_name_dict = create_var_name_dict(X)
 
-country = st.selectbox("choose country", X.country)
+country = st.selectbox("Choose a Country", X.country)
 para_list = var_name_dict.keys()
-para_0 = st.selectbox("choose parameter", para_list)
+para_0 = st.selectbox("Choose a Category", para_list)
 para_0 = var_name_dict[para_0]
 para_0_val = st.slider("fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
 
