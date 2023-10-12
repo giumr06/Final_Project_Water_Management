@@ -5,8 +5,13 @@ from amwag.app_plotting.app_plotting import *
 from sklearn import set_config
 set_config(transform_output="pandas")
 
+st.set_page_config(
+        page_title="The Amwag Forecast",
+        page_icon="🐬",
+        layout="centered"
+)
 
-st.markdown("## The Amwag overtime:")
+st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Forecast </h1>", unsafe_allow_html=True)
 st.write("Here you can see forecasts from multivariate and univariate methods")
 
 X_fc = pd.read_csv("./data/forecast_2021_2025.csv", index_col=0)

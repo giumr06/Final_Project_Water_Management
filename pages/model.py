@@ -7,12 +7,12 @@ from sklearn import set_config
 set_config(transform_output="pandas")
 
 st.set_page_config(
-        page_title="model prediction",
+        page_title="The Amwag Module",
         page_icon="🐳",
         layout="centered"
 )
 
-st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Prediction </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Module </h1>", unsafe_allow_html=True)
 st.write("     ")
 X = pd.read_csv("./data/data_2020.csv", index_col=0)
 Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
