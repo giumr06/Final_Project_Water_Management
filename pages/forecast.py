@@ -29,8 +29,8 @@ Y_fc_c = Y_fc.query("country == @country")
 Y_past_c = Y_past.query("country == @country")
 Y_fc_var_c = Y_fc_var.query("country == @country")
 
-uni = st.sidebar.checkbox("Show the Univariate Forecast ")
-multi = st.sidebar.checkbox("Show the Multivariate Forecast")
+uni = st.sidebar.checkbox("Show the Univariate Forecast 🦑")
+multi = st.sidebar.checkbox("Show the Multivariate Forecast 🐙")
 targets_fig = create_timeline(Y_fc_c, Y_fc_var_c, Y_past_c, uni, multi)
 
 st.plotly_chart(targets_fig, use_container_width=True)
@@ -38,7 +38,7 @@ st.plotly_chart(targets_fig, use_container_width=True)
 # features
 var_name_dict = create_var_name_dict(X_past)
 para_list = var_name_dict.keys()
-selected_features = st.sidebar.multiselect("Choose the categories:", para_list)
+selected_features = st.sidebar.multiselect("Choose a Variant:", para_list)
 selected_features = [var_name_dict[sf] for sf in selected_features]
 
 X_fc_c = X_fc.query("country == @country")

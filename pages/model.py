@@ -22,9 +22,9 @@ var_name_dict = create_var_name_dict(X)
 
 country = st.selectbox("Choose a Country", X.country)
 para_list = var_name_dict.keys()
-para_0 = st.selectbox("Choose a Category", para_list)
+para_0 = st.selectbox("Choose a Variant", para_list)
 para_0 = var_name_dict[para_0]
-para_0_val = st.slider("fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
+para_0_val = st.slider("Percentage of change in the original value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
 
 model_dict = load_pickle('model')
 
@@ -35,7 +35,11 @@ Y_new = get_single_predictions(model_dict, X_new)
 
 my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
 
-st.plotly_chart(my_fig, use_container_width=True)
+left_plt,cent_plt,cent_2_plt,right_plt,right_2_plt,last_plt = st.columns(6)
+with cent_plt:
+        st.plotly_chart(my_fig)
+
+
 left_co,cent_co,cent_2_co,right_co,right_2_co,last_co = st.columns(6)
 with last_co:
         st.image("./app_images/wave_2.png",width=175)
