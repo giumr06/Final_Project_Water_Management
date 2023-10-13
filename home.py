@@ -84,11 +84,10 @@ if home_page == 'The Project':
         left_co,cent_co,cent_2_co,right_co,right_2_co,last_co = st.columns(6)
         with cent_2_co:
             st.image("./app_images/wave_1.png",width=180) 
+            st.markdown("    ")
         st.markdown(
            
             """
-            \n
-            \n
            ##### Understanding Global Water Stress
            Global water stress has emerged as a pivotal challenge that threatens livelihoods and economies. This critical issue is characterized by the demand for water surpassing its availability, a trend that has seen a doubling of water demand since 1960. Various factors contribute to this surge in demand, including population growth, the needs of agriculture, energy production, and industry. Furthermore, inadequate investments in water infrastructure, unsustainable water policies, and the effects of climate change on water supply further exacerbate the problem. \n
            As a result, water-stressed areas face two primary categories of vulnerabilities: those with extreme water stress, using over 80% of their available supply, and those with high water stress, consuming 40% of their supply. This situation often leads to water shortages, with profound implications for communities and industries dependent on this finite resource.\n
