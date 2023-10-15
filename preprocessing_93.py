@@ -367,7 +367,7 @@ def get_full_preprocessor_93(full_column_list, hot=True):
 
     if hot:
         hot_columns = ColumnTransformer([
-            ('cat', PassthroughTransformer(), hot_cols)
+            ('cat', PassthroughTransformer(), hot_cols),
             ('num', MinMaxScaler(), scaled_cols),
 
         ])
