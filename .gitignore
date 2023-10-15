@@ -1,5 +1,6 @@
 data/AQUA*
 .amwag/*
+amwag.egg*
 requirements
 convert_table.ipynb
 
