@@ -4,13 +4,13 @@ import numpy as np
 from sklearn import set_config
 set_config(transform_output="pandas")
 
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, MinMaxScaler
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 
 ### global variables ###
-# add sudan and south sudan 
-data_sparse_countries = ['Sudan','South Sudan','Andorra','Antigua and Barbuda', 'Bahamas','Bosnia and Herzegovina','Brunei Darussalam','Cook Islands','Dominica','Equatorial Guinea','Faroe Islands','Grenada','Holy See','Kiribati', 'Liechtenstein','Marshall Islands','Micronesia (Federated States of)','Monaco','Montenegro','Nauru','Niue','Palau','Saint Kitts and Nevis','Saint Lucia','Saint Vincent and the Grenadines','Samoa','Serbia','San Marino', 'Sao Tome and Principe','Singapore', 'Seychelles','Solomon Islands','Tokelau','Tonga','Vanuatu','Djibouti','Maldives','Papua New Guinea','Tuvalu']
+
+data_sparse_countries = ['Andorra','Antigua and Barbuda', 'Bahamas','Bosnia and Herzegovina','Brunei Darussalam','Cook Islands','Dominica','Equatorial Guinea','Faroe Islands','Grenada','Holy See','Kiribati', 'Liechtenstein','Marshall Islands','Micronesia (Federated States of)','Monaco','Montenegro','Nauru','Niue','Palau','Saint Kitts and Nevis','Saint Lucia','Saint Vincent and the Grenadines','Samoa','Serbia','San Marino', 'Sao Tome and Principe','Singapore', 'Seychelles','Solomon Islands','Tokelau','Tonga','Vanuatu','Djibouti','Maldives','Papua New Guinea','Tuvalu']
 
 exclude_list = ['Water withdrawal for livestock (watering and cleaning)', 'Water withdrawal for aquaculture', 'Harvested irrigated temporary crop area: Sweet potatoes', 'Harvested irrigated permanent crop area: Plantains', 'Number of people undernourished (3-year average)', '% of area equipped for irrigation drained', 'Harvested irrigated temporary crop area: Millet', 'Direct use of agricultural drainage water', 'Harvested irrigated temporary crop area: Sorghum', 'Harvested irrigated temporary crop area: Cassava', 'Population affected by water related disease', 'Direct use of treated municipal wastewater for irrigation purposes', 'Harvested irrigated permanent crop area: Other fruits', 'Harvested irrigated permanent crop area: Cocoa beans', 'Harvested irrigated permanent crop area: Tea', 'Harvested irrigated permanent crop area: Rubber', 'Harvested irrigated temporary crop area: Groundnuts', 'Harvested irrigated temporary crop area: Sesame', 'Harvested irrigated permanent crop area: Olives', '% of area equipped for irrigation by direct use of agricultural drainage water ', 'Harvested irrigated permanent crop area: Coconuts', 'Area equipped for irrigation by direct use of agricultural drainage water', 'Area equipped for irrigation by desalinated water', '% of area equipped for irrigation by desalinated water']
 
@@ -22,22 +22,24 @@ initial_drop_columns = ["M49", "Symbol", "Symbol Description", "Unit"]
 
 linear_drop_list = ["% of the cultivated area equipped for irrigation", "Area equipped for full control irrigation: actually irrigated", "Area equipped for full control irrigation: total", "MDG 7.5. Freshwater withdrawal as % of total renewable water resources", "Arable land area", "Area equipped for irrigation: total", "Long-term average annual precipitation in volume", "Long-term average annual precipitation in depth", "Groundwater produced internally","Surface water produced internally", "Permanent crops area", "Overlap between surface water and groundwater", "Overlap: between surface water and groundwater", "Rural population with access to safe drinking-water (JMP)", "Surface water: inflow not submitted to treaties", "Surface water: inflow submitted to treaties", "Surface water: accounted inflow", "Total renewable water resources", "Surface water: outflow to other countries secured through treaties", "Surface water: total external renewable", "Surface water: total flow of border rivers", "Surface water: accounted flow of border rivers", "Total renewable surface water", "% of area equipped for full control irrigation actually irrigated", "Surface water: outflow to other countries not submitted to treaties", "Surface water: outflow to other countries submitted to treaties", "Surface water: inflow secured through treaties", "Total freshwater withdrawal"]
 
-drop_for_now_list = ["% of agricultural GVA produced by irrigated agriculture","SDG 6.4.1. Irrigated Agriculture Water Use Efficiency","Human Development Index (HDI) [highest = 1]", "Industry, value added to GDP" , "Services, value added to GDP", "Agriculture, value added to GDP", "Industrial water withdrawal as % of total water withdrawal", "Municipal water withdrawal as % of total withdrawal", "Gross Domestic Product (GDP)", "Urban population with access to safe drinking-water (JMP)"]
+drop_for_now_list = ["Human Development Index (HDI) [highest = 1]", "Industry, value added to GDP" , "Services, value added to GDP", "Agriculture, value added to GDP", "Industrial water withdrawal as % of total water withdrawal", "Municipal water withdrawal as % of total withdrawal", "Gross Domestic Product (GDP)", "Urban population with access to safe drinking-water (JMP)"]
 
-complete_drop_list = exclude_list + drop_list + dropdrop_list + linear_drop_list + drop_for_now_list 
+complete_drop_list = exclude_list + drop_list + dropdrop_list + linear_drop_list + drop_for_now_list
 
 transformation_dict = {
     "log":
-        ["agricultural_water_withdrawal","agricultural_water_withdrawal_as_%_of_total_renewable_water_resources", "cultivated_area_arable_land_plus_permanent_crops", "dam_capacity_per_capita", "groundwater_entering_the_country_total", "industrial_water_withdrawal", "municipal_water_withdrawal", "population_density", "ratio_between_rainfed_and_irrigated_yields", "rural_population", "industrial_water_use_efficiency", "services_water_use_efficiency","water_use_efficiency","surface_water_entering_the_country_total", "surface_water_leaving_the_country_to_other_countries_total", "total_agricultural_water_managed_area","total_area_of_the_country_excl_coastal_water", "total_dam_capacity", "total_internal_renewable_water_resources", "total_internal_renewable_water_resources_per_capita", "total_population", "total_renewable_groundwater", "total_renewable_water_resources_per_capita", "total_water_withdrawal", "urban_population"],
+        ["agricultural_water_withdrawal","agricultural_water_withdrawal_as_%_of_total_renewable_water_resources",        "cultivated_area_arable_land_plus_permanent_crops", "dam_capacity_per_capita", "groundwater_entering_the_country_total", "industrial_water_withdrawal", "municipal_water_withdrawal", "population_density", "ratio_between_rainfed_and_irrigated_yields", "rural_population", "industrial_water_use_efficiency","irrigated_agriculture_water_use_efficiency", "services_water_use_efficiency","water_use_efficiency","surface_water_entering_the_country_total", "surface_water_leaving_the_country_to_other_countries_total", "total_agricultural_water_managed_area","total_area_of_the_country_excl_coastal_water", "total_dam_capacity", "total_internal_renewable_water_resources", "total_internal_renewable_water_resources_per_capita", "total_population", "total_renewable_groundwater", "total_renewable_water_resources_per_capita", "total_water_withdrawal", "urban_population"],
     "square_root":
         ["national_rainfall_index"],
     "cube_root":
-        ["%_of_total_country_area_cultivated",  "agriculture_value_added_%_gdp", "total_water_withdrawal_per_capita"]}
+        ["%_of_agricultural_gva_produced_by_irrigated_agriculture", "%_of_total_country_area_cultivated",  "agriculture_value_added_%_gdp", "total_water_withdrawal_per_capita"]}
 
 imputation_dict = {
     'Qatar': {'dam_capacity_per_capita': 0, 'total_dam_capacity': 0,'ratio_between_rainfed_and_irrigated_yields': 0},
     'Republic of Korea': {'national_rainfall_index': 1150},
     'Saudi Arabia': {'ratio_between_rainfed_and_irrigated_yields': 0, 'surface_water_leaving_the_country_to_other_countries_total': 0},
+    'South Sudan': {'national_rainfall_index': 0, 'total_dam_capacity': 0, 'dam_capacity_per_capita': 0},
+    'Sudan': {'national_rainfall_index': 257},
     'Timor-Leste':{'national_rainfall_index': 1500, 'total_dam_capacity': 0, 'dam_capacity_per_capita': 0},
     'Turkmenistan': {'ratio_between_rainfed_and_irrigated_yields': 0},
     'United Arab Emirates': {'ratio_between_rainfed_and_irrigated_yields': 0},
@@ -47,13 +49,13 @@ imputation_dict = {
     'Israel': {'dam_capacity_per_capita': 0,'total_dam_capacity': 0},
     'Jordan': {'surface_water_leaving_the_country_to_other_countries_total': 0},
     'Kuwait': {'dam_capacity_per_capita': 0, 'total_dam_capacity': 0, 'ratio_between_rainfed_and_irrigated_yields': 1.24},
-    'Malta': {'national_rainfall_index': 568,'total_dam_capacity': 0},
-    'Luxembourg': {'national_rainfall_index': 847.9,'total_area_of_the_country_excl_coastal_water': 259.0, 'rural_population': 68.834,'population_density': 168.379537},
+    'Malta': {'national_rainfall_index': 568},
+    'Luxembourg': {'national_rainfall_index': 847.9},
     'Mauritius': {'national_rainfall_index': 2342},
     'Oman': {'ratio_between_rainfed_and_irrigated_yields': 1.24,'surface_water_leaving_the_country_to_other_countries_total': 0},
-    'Palestine': {'national_rainfall_index': 490,'total_dam_capacity': 0},
+    'Palestine': {'national_rainfall_index': 490},
     'Azerbaijan': {'surface_water_leaving_the_country_to_other_countries_total': 0},
-    'Bahrain': {'national_rainfall_index': 36,'total_dam_capacity': 0},
+    'Bahrain': {'national_rainfall_index': 36},
     'Barbados': {'dam_capacity_per_capita': 0, 'total_dam_capacity': 0, 'national_rainfall_index': 1525},
     'Burundi': {'dam_capacity_per_capita': 0, 'total_dam_capacity': 0},
     'Central African Republic': {'dam_capacity_per_capita': 0, 'total_dam_capacity': 0},
@@ -62,31 +64,28 @@ imputation_dict = {
     "Democratic People's Republic of Korea": {'national_rainfall_index': 244},
     'Egypt': {'ratio_between_rainfed_and_irrigated_yields': 1.124},
     'Gambia': {'dam_capacity_per_capita': 0, 'total_dam_capacity': 0},
-    'Puerto Rico': {'dam_capacity_per_capita': 119.6, 'total_dam_capacity': 0.3937},
-    'Somalia': {'total_dam_capacity': 0},
-    'Belgium': {'total_area_of_the_country_excl_coastal_water': 3053.0, 'rural_population': 295.224, 'population_density': 336.784573},
-   
+    'Puerto Rico': {'dam_capacity_per_capita': 119.6, 'total_dam_capacity': 0.3937}
     }
 
+scaled_cols = ['year', '%_of_agricultural_gva_produced_by_irrigated_agriculture', '%_of_agricultural_water_managed_area_equipped_for_irrigation', '%_of_total_country_area_cultivated', 'agricultural_water_withdrawal', 'agricultural_water_withdrawal_as_%_of_total_renewable_water_resources', 'agricultural_water_withdrawal_as_%_of_total_water_withdrawal', 'agriculture_value_added_%_gdp', 'cultivated_area_arable_land_plus_permanent_crops', 'dam_capacity_per_capita', 'dependency_ratio', 'groundwater_accounted_inflow', 'groundwater_entering_the_country_total', 'industrial_water_withdrawal', 'municipal_water_withdrawal', 'national_rainfall_index', 'population_density', 'ratio_between_rainfed_and_irrigated_yields', 'rural_population', 'industrial_water_use_efficiency', 'irrigated_agriculture_water_use_efficiency', 'services_water_use_efficiency', 'water_use_efficiency', 'surface_water_entering_the_country_total', 'surface_water_leaving_the_country_to_other_countries_total', 'total_agricultural_water_managed_area', 'total_area_of_the_country_excl_coastal_water', 'total_dam_capacity', 'total_internal_renewable_water_resources', 'total_internal_renewable_water_resources_per_capita', 'total_population', 'total_renewable_groundwater', 'total_renewable_water_resources_per_capita', 'total_water_withdrawal', 'total_water_withdrawal_per_capita', 'urban_population', 'water_resources_total_external_renewable']
 
-
-desc_imputation_cols = ['agricultural_water_withdrawal','agricultural_water_withdrawal_as_%_of_total_renewable_water_resources',
-                        'agricultural_water_withdrawal_as_%_of_total_water_withdrawal','municipal_water_withdrawal',
-                        'industrial_water_use_efficiency','services_water_use_efficiency','water_use_efficiency',
-                        'total_agricultural_water_managed_area','total_water_withdrawal','total_water_withdrawal_per_capita']
-
-target_list = ['water_stress','total_population_with_access_to_safe_drinking_water']
-
-scaled_cols = ['%_of_agricultural_water_managed_area_equipped_for_irrigation', '%_of_total_country_area_cultivated', 'agricultural_water_withdrawal', 'agricultural_water_withdrawal_as_%_of_total_renewable_water_resources', 'agricultural_water_withdrawal_as_%_of_total_water_withdrawal', 'agriculture_value_added_%_gdp', 'cultivated_area_arable_land_plus_permanent_crops', 'dam_capacity_per_capita', 'dependency_ratio', 'groundwater_accounted_inflow', 'groundwater_entering_the_country_total', 'industrial_water_withdrawal', 'municipal_water_withdrawal', 'national_rainfall_index', 'population_density', 'ratio_between_rainfed_and_irrigated_yields', 'rural_population', 'industrial_water_use_efficiency', 'services_water_use_efficiency', 'water_use_efficiency', 'surface_water_entering_the_country_total', 'surface_water_leaving_the_country_to_other_countries_total', 'total_agricultural_water_managed_area', 'total_area_of_the_country_excl_coastal_water', 'total_dam_capacity', 'total_internal_renewable_water_resources', 'total_internal_renewable_water_resources_per_capita', 'total_population', 'total_renewable_groundwater', 'total_renewable_water_resources_per_capita', 'total_water_withdrawal', 'total_water_withdrawal_per_capita', 'urban_population', 'water_resources_total_external_renewable']
-
-hot_cols = ['country','year']
-
-
-
-
+hot_cols = ['country']
 
 
 ### drop class ###
+
+class ColumnSlicer:
+    def __init__(self, new_slice_list):
+        self.new_slice_list = new_slice_list
+    def fit(self, df, y=None):
+        pass
+    def transform(self, df, y=None):
+        [[r0, r1], [c0, c1]] = self.new_slice_list 
+        df_new = df.iloc[r0:r1, c0:c1]
+        return df_new
+    def fit_transform(self, df, y=None):
+        self.fit(df)
+        return self.transform(df)
 
 class ColumnDropper:
     def __init__(self, to_drop_columns):
@@ -166,48 +165,6 @@ class GroupedMedianImputer:
     def fit_transform(self, df, y=None):
         self.fit(df)
         return self.transform(df)
-    
-
-
-
-# class Descending_imputer:
-#     def __init__(self, group_col, value_cols):
-#         self.group_col = group_col
-#         self.value_cols = value_cols
-#         self.medians = None
-
-#     def fit(self, df, y=None):
-#         self.medians = df.groupby(self.group_col)[self.value_cols].median()
-
-#     def transform(self, df, y=None):
-#         df_new = df.copy()
-#         if self.medians is None:
-#             raise Exception("The imputer has not been fitted yet.")
-
-#         def fillna_grouped(x):
-#             return x.fillna(self.medians.loc[x.name, col])
-
-#         for col in self.value_cols:
-#             if col == self.group_col:
-#                 continue
-
-#             last_valid = None
-#             for i in range(len(df_new)):
-#                 if pd.notna(df_new.at[i, col]):
-#                     last_valid = df_new.at[i, col]
-#                 else:
-#                     df_new.at[i, col] = last_valid
-
-#         return df_new
-
-#     def fit_transform(self, df, y=None):
-#         self.fit(df)
-#         return self.transform(df)
-
-
-
-
-
 
 
 class FromDictImputer:
@@ -324,105 +281,42 @@ class ColTransNameRemover:
 
 ### preprocessing getter functions ###
 
-def get_pre_split_processor_93():
+def get_pre_split_processor():
 
-    pre_split_pipeline93 = Pipeline([
+    pre_split_pipeline = Pipeline([
         ("initial_drop_columns", ColumnDropper(initial_drop_columns)),
         ("drop_countries", FromColumnDropper("Country", data_sparse_countries)),
         ("drop_variables", FromColumnDropper("Variable", complete_drop_list)),
         ("pivot", Pivoter()),
         ("rename", ColumnRenamer()),
-        ("target_imputation", GroupedMedianImputer("country",[col for col in target_list if not col=="country"]))
     ])
 
-    return pre_split_pipeline93
+    return pre_split_pipeline
 
+def get_full_preprocessor(full_column_list, hot=True):
 
-
-# # full data pipline (no split for clustring)
-# def get_full_preprocessor_93(full_column_list, hot=True):
-    
-#     hot_columns = ColumnTransformer([
-#         ('num', StandardScaler(), scaled_cols)
-#         ('cat'),
-#         ])
-#     scale_columns = ColumnTransformer([
-#         ('num', StandardScaler(), scaled_cols),
-#         ], remainder="passthrough")
-
-#     if hot:
-#         preprocessor_93 = Pipeline([
-#             ("hard_imputation", FromDictImputer(imputation_dict)),
-#             ("median_imputation", GroupedMedianImputer("country", [col for col in full_column_list if not col=="country"])),
-#             ("conversion", FromDictConverter(transformation_dict)),     
-#             ("column_transformation", hot_columns)   
-#         ])
-
-#     return preprocessor_93
-
-
-
-def get_full_preprocessor_93(full_column_list, hot=True):
-
+    hot_columns = ColumnTransformer([
+        ('num', StandardScaler(), scaled_cols),
+        ('cat', OneHotEncoder(drop='first', sparse_output=False), hot_cols),
+        ])
+    scale_columns = ColumnTransformer([
+        ('num', StandardScaler(), scaled_cols),
+        ], remainder="passthrough")
 
     if hot:
-        hot_columns = ColumnTransformer([
-            ('cat', PassthroughTransformer(), hot_cols)
-            ('num', StandardScaler(), scaled_cols),
-
-        ])
-        preprocessor_93 = Pipeline([
+        preprocessor = Pipeline([
             ("hard_imputation", FromDictImputer(imputation_dict)),
-            ("median_imputation", GroupedMedianImputer("country", [col for col in full_column_list if not col == "country"])),
-            ("conversion", FromDictConverter(transformation_dict)),
-            ("column_transformation", hot_columns)
+            ("median_imputation", GroupedMedianImputer("country", [col for col in full_column_list if not col=="country"])),
+            ("conversion", FromDictConverter(transformation_dict)),     
+            ("column_transformation", hot_columns)   
         ])
     else:
-        scale_columns = ColumnTransformer([
-            ('num', StandardScaler(), scaled_cols)
-        ], remainder="passthrough")
-        preprocessor_93 = Pipeline([
+        preprocessor = Pipeline([
             ("hard_imputation", FromDictImputer(imputation_dict)),
-            ("median_imputation", GroupedMedianImputer("country", [col for col in full_column_list if not col == "country"])),
-            ("conversion", FromDictConverter(transformation_dict)),
+            ("median_imputation", GroupedMedianImputer("country", [col for col in full_column_list if not col=="country"])),
+            ("conversion", FromDictConverter(transformation_dict)),     
             ("column_transformation", scale_columns),
-            ("remove_col_trans_names", ColTransNameRemover())
+            ("remove_col_trans_names",  ColTransNameRemover())
         ])
 
-    return preprocessor_93
-
-
-# # copy of original pipline 
-# def get_full_preprocessor_93(full_column_list, hot=True):
-
-#     # num_pipeline = Pipeline([
-#     #     ('scaling', StandardScaler())
-#     #     ])
-#     # cat_pipeline = Pipeline([
-#     #     ('ohe', OneHotEncoder(drop='first', sparse_output=False))
-#     #     ])
-#     hot_columns = ColumnTransformer([
-#         ('num', StandardScaler(), scaled_cols)
-#        # ('cat', OneHotEncoder(drop='first', sparse_output=False), hot_cols),
-#         ])
-#     scale_columns = ColumnTransformer([
-#         ('num', StandardScaler(), scaled_cols),
-#         ], remainder="passthrough")
-
-#     if hot:
-#         preprocessor_93 = Pipeline([
-#             ("hard_imputation", FromDictImputer(imputation_dict)),
-#             ("median_imputation", GroupedMedianImputer("country", [col for col in full_column_list if not col=="country"])),
-#             ("conversion", FromDictConverter(transformation_dict)),     
-#             ("column_transformation", hot_columns)   
-#         ])
-#     else:
-#         preprocessor_93 = Pipeline([
-#             ("hard_imputation", FromDictImputer(imputation_dict)),
-#             ("median_imputation", GroupedMedianImputer("country", [col for col in full_column_list if not col=="country"])),
-#             ("conversion", FromDictConverter(transformation_dict)),     
-#             ("column_transformation", scale_columns),
-#             ("remove_col_trans_names",  ColTransNameRemover())
-#         ])
-
-#     return preprocessor_93
+    return preprocessor
