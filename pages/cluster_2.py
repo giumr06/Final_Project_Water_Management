@@ -49,5 +49,6 @@ cluster_info = {
 sidebar_data = filtered_df.drop(["Size", "ISO Alpha-3 Code"],axis=1)
 st.sidebar.dataframe(sidebar_data)
 st.sidebar.title("Cluster Information")
+
 for cluster, size in cluster_info.items():
     st.sidebar.text(f"{cluster}: {size}")
