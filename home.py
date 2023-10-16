@@ -11,7 +11,7 @@ st.set_page_config(
 show_pages(
     [
         Page("home.py", "Home", "🌊"),
-        Page("./pages/cluster_2.py", "World Map with Clusters", "🐋"),
+        Page("./pages/cluster_2.py", "The Cluster Map", "🐋"),
         Page("./pages/forecast.py", "The Time Forecast", "🐳"),
         Page("./pages/model.py", "The Ripple Effect", "🐬")
 

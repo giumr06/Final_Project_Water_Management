@@ -8,13 +8,13 @@ from sklearn import set_config
 set_config(transform_output="pandas")
 
 st.set_page_config(
-        page_title="World Map with Clusters",
+        page_title="The Cluster Map",
         page_icon="🐋",
         layout="wide"
 )
 
-st.markdown("<h1 style='text-align: center; color: ##113f67;'> World Map with Clusters </h1>", unsafe_allow_html=True)
-st.markdown("<h6 style='text-align: center;'> Cluster Countries </h6>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: ##113f67;'> The Cluster Map</h1>", unsafe_allow_html=True)
+st.markdown("<h6 style='text-align: center;'> The four groups of countries based in the data </h6>", unsafe_allow_html=True)
 
 df_h_last_10 = pd.read_csv('data/heir_last_10.csv', encoding='ISO-8859-1')
 df_h_last_10.drop([104,108,106],axis=0, inplace=True)
@@ -40,15 +40,18 @@ fig = px.choropleth(
 st.plotly_chart(fig)
 
 cluster_info = { 
-    "I Indo-African": 45,
-    "II Wave": 32,
-    "III BRICS like": 48,
-    "IV EU - US": 36,
+    "I. Indo-African": 45,
+    "II. The Scattered Clusters": 32,
+    "III. BRICS like": 48,
+    "IV. EU / US": 36,
     "Total": 161 
 }
-sidebar_data = filtered_df.drop(["Size", "ISO Alpha-3 Code"],axis=1)
+sidebar_data = filtered_df.drop(["Size", "ISO Alpha-3 Code","Cluster"],axis=1)
 st.sidebar.dataframe(sidebar_data)
 st.sidebar.title("Cluster Information")
 
 for cluster, size in cluster_info.items():
     st.sidebar.text(f"{cluster}: {size}")
+left_co_2,cent_co_2,cent_2_co_2,right_co_2,right_2_co_2,last_co_2 = st.columns(6)
+with last_co_2:
+    st.image("./app_images/wave_2.png",width=170)
