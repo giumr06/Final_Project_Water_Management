@@ -1,166 +1,162 @@
 Cluster,Size,Country Name,ISO Alpha-3 Code
-1,32,Albania,ALB
-1,32,Algeria,DZA
-1,32,Angola,AGO
-1,32,Armenia,ARM
-1,32,Belize,BLZ
-1,32,Bhutan,BTN
-1,32,Bolivia (Plurinational State of),BOL
-1,32,Cabo Verde,CPV
-1,32,Congo,COG
-1,32,Côte d'Ivoire,CIV
-1,32,Egypt,EGY
-1,32,El Salvador,SLV
-1,32,Eswatini,SWZ
-1,32,Georgia,GEO
-1,32,Ghana,GHA
-1,32,Guatemala,GTM
-1,32,Honduras,HND
-1,32,Indonesia,IDN
-1,32,Jordan,JOR
-1,32,Lao People's Democratic Republic,LAO
-1,32,Mongolia,MNG
-1,32,Morocco,MAR
-1,32,Nicaragua,NIC
-1,32,Nigeria,NGA
-1,32,Palestine,PSE
-1,32,Philippines,PHL
-1,32,Republic of Moldova,MDA
-1,32,Sri Lanka,LKA
-1,32,Tunisia,TUN
-1,32,Ukraine,UKR
-1,32,Uzbekistan,UZB
-1,32,Viet Nam,VNM
-2,45,Afghanistan,AFG
-2,45,Bangladesh,BGD
-2,45,Benin,BEN
-2,45,Burkina Faso,BFA
-2,45,Burundi,BDI
-2,45,Cambodia,KHM
-2,45,Cameroon,CMR
-2,45,Central African Republic,CAF
-2,45,Chad,TCD
-2,45,Comoros,COM
-2,45,Democratic People's Republic of Korea,PRK
-2,45,Democratic Republic of the Congo,COD
-2,45,Eritrea,ERI
-2,45,Ethiopia,ETH
-2,45,Gambia,GMB
-2,45,Guinea,GIN
-2,45,Guinea-Bissau,GNB
-2,45,Haiti,HTI
-2,45,India,IND
-2,45,Kenya,KEN
-2,45,Kyrgyzstan,KGZ
-2,45,Lesotho,LSO
-2,45,Liberia,LBR
-2,45,Madagascar,MDG
-2,45,Malawi,MWI
-2,45,Mali,MLI
-2,45,Mauritania,MRT
-2,45,Mozambique,MOZ
-2,45,Myanmar,MMR
-2,45,Nepal,NPL
-2,45,Niger,NGA
-2,45,Pakistan,PAK
-2,45,Rwanda,RWA
-2,45,Senegal,SEN
-2,45,Sierra Leone,SLE
-2,45,Somalia,SOM
-2,45,Syrian Arab Republic,SYR
-2,45,Tajikistan,TJK
-2,45,Timor-Leste,TLS
-2,45,Togo,TGO
-2,45,Uganda,UGA
-2,45,United Republic of Tanzania,TZA
-2,45,Yemen,YEM
-2,45,Zambia,ZMB
-2,45,Zimbabwe,ZWE
-3,36,Australia,AUS
-3,36,Austria,AUT
-3,36,Bahrain,BHR
-3,36,Belgium,BEL
-3,36,Canada,CAN
-3,36,Cyprus,CYP
-3,36,Czechia,CZE
-3,36,Denmark,DNK
-3,36,Estonia,EST
-3,36,Finland,FIN
-3,36,France,FRA
-3,36,Germany,DEU
-3,36,Greece,GRC
-3,36,Iceland,ISL
-3,36,Ireland,IRL
-3,36,Israel,ISR
-3,36,Italy,ITA
-3,36,Japan,JPN
-3,36,Kuwait,KWT
-3,36,Luxembourg,LUX
-3,36,Malta,MLT
-3,36,Netherlands (Kingdom of the),NLD
-3,36,New Zealand,NZL
-3,36,Norway,NOR
-3,36,Portugal,PRT
-3,36,Puerto Rico,PRI
-3,36,Qatar,QAT
-<<<<<<< HEAD
-3,36,Republic of Korea,PRK
-=======
-3,36,Republic of Korea,KOR
->>>>>>> e0ad75013d4f96d630f69ebd36e13959be58edb4
-3,36,Saudi Arabia,SAU
-3,36,Slovenia,SVN
-3,36,Spain,ESP
-3,36,Sweden,SWE
-3,36,Switzerland,CHE
-3,36,United Arab Emirates,ARE
-3,36,United Kingdom of Great Britain and Northern Ireland,GBR
-3,36,United States of America,USA
-4,48,Argentina,ARG
-4,48,Azerbaijan,AZE
-4,48,Barbados,BRB
-4,48,Belarus,BLR
-4,48,Botswana,BWA
-4,48,Brazil,BRA
-4,48,Bulgaria,BGR
-4,48,Chile,CHL
-4,48,China,CHN
-4,48,Colombia,COL
-4,48,Costa Rica,CRI
-4,48,Croatia,HRV
-4,48,Cuba,CUB
-4,48,Dominican Republic,DOM
-4,48,Ecuador,ECU
-4,48,Fiji,FJI
-4,48,Gabon,GAB
-4,48,Guyana,GUY
-4,48,Hungary,HUN
-4,48,Iran (Islamic Republic of),IRN
-4,48,Iraq,IRQ
-4,48,Jamaica,JAM
-4,48,Kazakhstan,KAZ
-4,48,Latvia,LVA
-4,48,Lebanon,LBN
-4,48,Libya,LBY
-4,48,Lithuania,LTU
-4,48,Malaysia,MYS
-4,48,Mauritius,MUS
-4,48,Mexico,MEX
-4,48,Namibia,NAM
-4,48,North Macedonia,MKD
-4,48,Oman,OMN
-4,48,Panama,PAN
-4,48,Paraguay,PRY
-4,48,Peru,PER
-4,48,Poland,POL
-4,48,Romania,ROU
-4,48,Russian Federation,RUS
-4,48,Slovakia,SVK
-4,48,South Africa,ZAF
-4,48,Suriname,SUR
-4,48,Thailand,THA
-4,48,Trinidad and Tobago,TTO
-4,48,Turkmenistan,TKM
-4,48,Türkiye,TUR
-4,48,Uruguay,URY
-4,48,Venezuela (Bolivarian Republic of),VEN
+4,36,Australia,AUS
+4,36,Austria,AUT
+4,36,Bahrain,BHR
+4,36,Belgium,BEL
+4,36,Canada,CAN
+4,36,Cyprus,CYP
+4,36,Czechia,CZE
+4,36,Denmark,DNK
+4,36,Estonia,EST
+4,36,Finland,FIN
+4,36,France,FRA
+4,36,Germany,DEU
+4,36,Greece,GRC
+4,36,Iceland,ISL
+4,36,Ireland,IRL
+4,36,Israel,ISR
+4,36,Italy,ITA
+4,36,Japan,JPN
+4,36,Kuwait,KWT
+4,36,Luxembourg,LUX
+4,36,Malta,MLT
+4,36,Netherlands (Kingdom of the),NLD
+4,36,New Zealand,NZL
+4,36,Norway,NOR
+4,36,Portugal,PRT
+4,36,Puerto Rico,PRI
+4,36,Qatar,QAT
+4,36,Republic of Korea,KOR
+4,36,Saudi Arabia,SAU
+4,36,Slovenia,SVN
+4,36,Spain,ESP
+4,36,Sweden,SWE
+4,36,Switzerland,CHE
+4,36,United Arab Emirates,ARE
+4,36,United Kingdom of Great Britain and Northern Ireland,GBR
+4,36,United States of America,USA
+3,48,Argentina,ARG
+3,48,Azerbaijan,AZE
+3,48,Barbados,BRB
+3,48,Belarus,BLR
+3,48,Botswana,BWA
+3,48,Brazil,BRA
+3,48,Bulgaria,BGR
+3,48,Chile,CHL
+3,48,China,CHN
+3,48,Colombia,COL
+3,48,Costa Rica,CRI
+3,48,Croatia,HRV
+3,48,Cuba,CUB
+3,48,Dominican Republic,DOM
+3,48,Ecuador,ECU
+3,48,Fiji,FJI
+3,48,Gabon,GAB
+3,48,Guyana,GUY
+3,48,Hungary,HUN
+3,48,Iran (Islamic Republic of),IRN
+3,48,Iraq,IRQ
+3,48,Jamaica,JAM
+3,48,Kazakhstan,KAZ
+3,48,Latvia,LVA
+3,48,Lebanon,LBN
+3,48,Libya,LBY
+3,48,Lithuania,LTU
+3,48,Malaysia,MYS
+3,48,Mauritius,MUS
+3,48,Mexico,MEX
+3,48,Namibia,NAM
+3,48,North Macedonia,MKD
+3,48,Oman,OMN
+3,48,Panama,PAN
+3,48,Paraguay,PRY
+3,48,Peru,PER
+3,48,Poland,POL
+3,48,Romania,ROU
+3,48,Russian Federation,RUS
+3,48,Slovakia,SVK
+3,48,South Africa,ZAF
+3,48,Suriname,SUR
+3,48,Thailand,THA
+3,48,Trinidad and Tobago,TTO
+3,48,Turkmenistan,TKM
+3,48,Türkiye,TUR
+3,48,Uruguay,URY
+3,48,Venezuela (Bolivarian Republic of),VEN
+2,32,Albania,ALB
+2,32,Algeria,DZA
+2,32,Angola,AGO
+2,32,Armenia,ARM
+2,32,Belize,BLZ
+2,32,Bhutan,BTN
+2,32,Bolivia (Plurinational State of),BOL
+2,32,Cabo Verde,CPV
+2,32,Congo,COG
+2,32,Côte d'Ivoire,CIV
+2,32,Egypt,EGY
+2,32,El Salvador,SLV
+2,32,Eswatini,SWZ
+2,32,Georgia,GEO
+2,32,Ghana,GHA
+2,32,Guatemala,GTM
+2,32,Honduras,HND
+2,32,Indonesia,IDN
+2,32,Jordan,JOR
+2,32,Lao People's Democratic Republic,LAO
+2,32,Mongolia,MNG
+2,32,Morocco,MAR
+2,32,Nicaragua,NIC
+2,32,Nigeria,NGA
+2,32,Palestine,PSE
+2,32,Philippines,PHL
+2,32,Republic of Moldova,MDA
+2,32,Sri Lanka,LKA
+2,32,Tunisia,TUN
+2,32,Ukraine,UKR
+2,32,Uzbekistan,UZB
+2,32,Viet Nam,VNM
+1,45,Afghanistan,AFG
+1,45,Bangladesh,BGD
+1,45,Benin,BEN
+1,45,Burkina Faso,BFA
+1,45,Burundi,BDI
+1,45,Cambodia,KHM
+1,45,Cameroon,CMR
+1,45,Central African Republic,CAF
+1,45,Chad,TCD
+1,45,Comoros,COM
+1,45,Democratic People's Republic of Korea,PRK
+1,45,Democratic Republic of the Congo,COD
+1,45,Eritrea,ERI
+1,45,Ethiopia,ETH
+1,45,Gambia,GMB
+1,45,Guinea,GIN
+1,45,Guinea-Bissau,GNB
+1,45,Haiti,HTI
+1,45,India,IND
+1,45,Kenya,KEN
+1,45,Kyrgyzstan,KGZ
+1,45,Lesotho,LSO
+1,45,Liberia,LBR
+1,45,Madagascar,MDG
+1,45,Malawi,MWI
+1,45,Mali,MLI
+1,45,Mauritania,MRT
+1,45,Mozambique,MOZ
+1,45,Myanmar,MMR
+1,45,Nepal,NPL
+1,45,Niger,NGA
+1,45,Pakistan,PAK
+1,45,Rwanda,RWA
+1,45,Senegal,SEN
+1,45,Sierra Leone,SLE
+1,45,Somalia,SOM
+1,45,Syrian Arab Republic,SYR
+1,45,Tajikistan,TJK
+1,45,Timor-Leste,TLS
+1,45,Togo,TGO
+1,45,Uganda,UGA
+1,45,United Republic of Tanzania,TZA
+1,45,Yemen,YEM
+1,45,Zambia,ZMB
+1,45,Zimbabwe,ZWE

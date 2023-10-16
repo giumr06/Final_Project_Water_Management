@@ -6,7 +6,7 @@ set_config(transform_output="pandas")
 
 st.set_page_config(
         page_title="The Time Forecast",
-        page_icon="🐬",
+        page_icon="🐳",
         layout="centered"
 )
 
