@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Forecast </h1>", unsafe_allow_html=True)
-st.markdown("<h6 style='text-align: center;'> Here you can see forecasts from multivariate and univariate methods </h6>", unsafe_allow_html=True)
+st.markdown("<h6 style='text-align: center;'> Here you can see a 5 years forecast from multivariate and univariate methods </h6>", unsafe_allow_html=True)
 
 X_fc = pd.read_csv("./data/forecast_2021_2025.csv", index_col=0)
 Y_fc = pd.read_csv("./data/forecast_2021_2025_targets.csv", index_col=0)

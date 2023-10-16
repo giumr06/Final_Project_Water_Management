@@ -11,7 +11,7 @@ st.set_page_config(
 show_pages(
     [
         Page("home.py", "Home", "🌊"),
-        Page("./pages/model.py", "The Amwag Module", "🐳"),
+        Page("./pages/model.py", "The Ripple Effect", "🐳"),
         Page("./pages/forecast.py", "The Amwag Forecast", "🐬")
     ]
 )
