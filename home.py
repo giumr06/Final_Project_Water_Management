@@ -12,7 +12,8 @@ show_pages(
     [
         Page("home.py", "Home", "🌊"),
         Page("./pages/model.py", "The Ripple Effect", "🐳"),
-        Page("./pages/forecast.py", "The Amwag Forecast", "🐬")
+        Page("./pages/forecast.py", "The Amwag Forecast", "🐬"),
+        Page("./pages/cluster.py", "World Map with Clusters", "🐋")
     ]
 )
 ##
