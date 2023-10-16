@@ -3,9 +3,6 @@ import pandas as pd
 from preprocessing_93 import *
 import plotly.express as px
 import pycountry
-import pydeck as pdk
-
-
 
 from sklearn import set_config
 set_config(transform_output="pandas")
@@ -24,13 +21,13 @@ df_h_last_10 = pd.read_csv('data/heir_last_10.csv', encoding='ISO-8859-1')
 df_h = df_h_last_10.drop(['Size', 'ISO Alpha-3 Code'], axis=1)
 st.sidebar.dataframe(df_h)
 
-#Cluster = {1:"#90f6d7", 2:"#35bcbf", 3:"#41506b", 4:"#263849"}
+color = ["#90f6d7", "#35bcbf", "#41506b", "#263849"]
 fig = px.choropleth(
     df_h_last_10,
     locations='ISO Alpha-3 Code',
     color="Cluster",
-    color_continuous_scale='Viridis',
     projection='natural earth',
+    color_discrete_sequence=color,
     width=900,
     height=500
 )
