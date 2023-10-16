@@ -20,8 +20,10 @@ X_past = pd.read_csv("./data/features_over_years.csv", index_col=0)
 df_fc_var = pd.read_csv("./data/VAR_forecast_full.csv", index_col=0)
 X_fc_var = df_fc_var.drop(columns=[tar for tar in Y_fc.columns.tolist() if not tar in ["country", "year"]])
 Y_fc_var = df_fc_var[Y_fc.columns.tolist()]
+df_cluster = pd.read_csv("./data/heir_last_10.csv", encoding='ISO-8859-1')
 
-country = st.sidebar.selectbox("Choose a Country", Y_fc.country.unique())
+clust = st.sidebar.selectbox("Choose the cluster", df_cluster.sort_values("Cluster").Cluster.unique())
+country = st.sidebar.selectbox("Choose a Country", df_cluster.query("Cluster == @clust")["Country Name"])
 
 # targets
 Y_fc_c = Y_fc.query("country == @country")

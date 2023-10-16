@@ -19,7 +19,7 @@ st.markdown("<h6 style='text-align: center;'> Cluster Countries </h6>", unsafe_a
 df_h_last_10 = pd.read_csv('data/heir_last_10.csv', encoding='ISO-8859-1')
 df_h_last_10.drop([104,108,106],axis=0, inplace=True)
 
-cluster_options = [0] + list(df_h_last_10['Cluster'].unique()) 
+cluster_options = [0] + list(df_h_last_10.sort_values("Cluster")['Cluster'].unique()) 
 selected_cluster = st.sidebar.selectbox("Select Cluster Number:", cluster_options)
 
 if selected_cluster == 0:
