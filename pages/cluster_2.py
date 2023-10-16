@@ -40,10 +40,10 @@ fig = px.choropleth(
 st.plotly_chart(fig)
 
 cluster_info = { 
-    "Wave": 32,
-    "Indo-African": 45,
-    "EU - US": 36,
-    "BRICS like": 48,
+    "I Indo-African": 45,
+    "II Wave": 32,
+    "III BRICS like": 48,
+    "IV EU - US": 36,
     "Total": 161 
 }
 sidebar_data = filtered_df.drop(["Size", "ISO Alpha-3 Code"],axis=1)
