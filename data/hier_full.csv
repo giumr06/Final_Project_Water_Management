@@ -1,0 +1,162 @@
+Cluster,Size,Country Name,ISO Alpha-3 Code
+1,24,Australia,AUS
+1,24,Austria,AUT
+1,24,Belgium,BEL
+1,24,Canada,CAN
+1,24,Denmark,DNK
+1,24,Finland,FIN
+1,24,France,FRA
+1,24,Germany,DEU
+1,24,Iceland,ISL
+1,24,Ireland,IRL
+1,24,Israel,ISR
+1,24,Italy,ITA
+1,24,Japan,JPN
+1,24,Kuwait,KWT
+1,24,Luxembourg,LUX
+1,24,Netherlands (Kingdom of the),NLD
+1,24,New Zealand,NZL
+1,24,Norway,NOR
+1,24,Qatar,QAT
+1,24,Sweden,SWE
+1,24,Switzerland,CHE
+1,24,United Arab Emirates,ARE
+1,24,United Kingdom of Great Britain and Northern Ireland,GBR
+1,24,United States of America,USA
+2,46,Argentina,ARG
+2,46,Bahrain,BHR
+2,46,Barbados,BRB
+2,46,Botswana,BWA
+2,46,Brazil,BRA
+2,46,Bulgaria,BGR
+2,46,Chile,CHL
+2,46,Colombia,COL
+2,46,Costa Rica,CRI
+2,46,Croatia,HRV
+2,46,Cuba,CUB
+2,46,Cyprus,CYP
+2,46,Czechia,CZE
+2,46,Dominican Republic,DOM
+2,46,Estonia,EST
+2,46,Gabon,GAB
+2,46,Greece,GRC
+2,46,Hungary,HUN
+2,46,Iran (Islamic Republic of),IRN
+2,46,Kazakhstan,KAZ
+2,46,Latvia,LVA
+2,46,Lebanon,LBN
+2,46,Libya,LBY
+2,46,Lithuania,LTU
+2,46,Malaysia,MYS
+2,46,Malta,MLT
+2,46,Mauritius,MUS
+2,46,Mexico,MEX
+2,46,Oman,OMN
+2,46,Panama,PAN
+2,46,Poland,POL
+2,46,Portugal,PRT
+2,46,Puerto Rico,PRI
+2,46,Republic of Korea,KOR
+2,46,Romania,ROU
+2,46,Russian Federation,RUS
+2,46,Saudi Arabia,SAU
+2,46,Slovakia,SVK
+2,46,Slovenia,SVN
+2,46,South Africa,ZAF
+2,46,Spain,ESP
+2,46,Suriname,SUR
+2,46,Trinidad and Tobago,TTO
+2,46,Türkiye,TUR
+2,46,Uruguay,URY
+2,46,Venezuela (Bolivarian Republic of),VEN
+3,37,Albania,ALB
+3,37,Algeria,DZA
+3,37,Angola,AGO
+3,37,Armenia,ARM
+3,37,Azerbaijan,AZE
+3,37,Belarus,BLR
+3,37,Belize,BLZ
+3,37,Bhutan,BTN
+3,37,Bolivia (Plurinational State of),BOL
+3,37,Cabo Verde,CPV
+3,37,China,CHN
+3,37,Congo,COG
+3,37,Ecuador,ECU
+3,37,Egypt,EGY
+3,37,El Salvador,SLV
+3,37,Eswatini,SWZ
+3,37,Fiji,FJI
+3,37,Georgia,GEO
+3,37,Guatemala,GTM
+3,37,Guyana,GUY
+3,37,Indonesia,IDN
+3,37,Iraq,IRQ
+3,37,Jamaica,JAM
+3,37,Jordan,JOR
+3,37,Mongolia,MNG
+3,37,Morocco,MAR
+3,37,Namibia,NAM
+3,37,North Macedonia,MKD
+3,37,Palestine,PSE
+3,37,Paraguay,PRY
+3,37,Peru,PER
+3,37,Philippines,PHL
+3,37,Sri Lanka,LKA
+3,37,Thailand,THA
+3,37,Tunisia,TUN
+3,37,Turkmenistan,TKM
+3,37,Ukraine,UKR
+4,54,Afghanistan,AFG
+4,54,Bangladesh,BGD
+4,54,Benin,BEN
+4,54,Burkina Faso,BFA
+4,54,Burundi,BDI
+4,54,Cambodia,KHM
+4,54,Cameroon,CMR
+4,54,Central African Republic,CAF
+4,54,Chad,TCD
+4,54,Comoros,COM
+4,54,Côte d'Ivoire,CIV
+4,54,Democratic People's Republic of Korea,PRK
+4,54,Democratic Republic of the Congo,COD
+4,54,Eritrea,ERI
+4,54,Ethiopia,ETH
+4,54,Gambia,GMB
+4,54,Ghana,GHA
+4,54,Guinea,GIN
+4,54,Guinea-Bissau,GNB
+4,54,Haiti,HTI
+4,54,Honduras,HND
+4,54,India,IND
+4,54,Kenya,KEN
+4,54,Kyrgyzstan,KGZ
+4,54,Lao People's Democratic Republic,LAO
+4,54,Lesotho,LSO
+4,54,Liberia,LBR
+4,54,Madagascar,MDG
+4,54,Malawi,MWI
+4,54,Mali,MLI
+4,54,Mauritania,MRT
+4,54,Mozambique,MOZ
+4,54,Myanmar,MMR
+4,54,Nepal,NPL
+4,54,Nicaragua,NIC
+4,54,Niger,NGA
+4,54,Nigeria,NGA
+4,54,Pakistan,PAK
+4,54,Republic of Moldova,MDA
+4,54,Rwanda,RWA
+4,54,Senegal,SEN
+4,54,Sierra Leone,SLE
+4,54,Somalia,SOM
+4,54,Syrian Arab Republic,SYR
+4,54,Tajikistan,TJK
+4,54,Timor-Leste,TLS
+4,54,Togo,TGO
+4,54,Uganda,UGA
+4,54,United Republic of Tanzania,TZA
+4,54,Uzbekistan,UZB
+4,54,Viet Nam,VNM
+4,54,Yemen,YEM
+4,54,Zambia,ZMB
+4,54,Zimbabwe,ZWE

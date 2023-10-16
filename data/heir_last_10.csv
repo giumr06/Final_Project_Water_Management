@@ -103,7 +103,11 @@ Cluster,Size,Country Name,ISO Alpha-3 Code
 3,36,Portugal,PRT
 3,36,Puerto Rico,PRI
 3,36,Qatar,QAT
+<<<<<<< HEAD
 3,36,Republic of Korea,PRK
+=======
+3,36,Republic of Korea,KOR
+>>>>>>> e0ad75013d4f96d630f69ebd36e13959be58edb4
 3,36,Saudi Arabia,SAU
 3,36,Slovenia,SVN
 3,36,Spain,ESP

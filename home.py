@@ -11,9 +11,15 @@ st.set_page_config(
 show_pages(
     [
         Page("home.py", "Home", "🌊"),
+<<<<<<< HEAD
         Page("./pages/cluster.py", "World Map with Clusters", "🐋"),
         Page("./pages/model.py", "The Ripple Effect", "🐳"),
         Page("./pages/forecast.py", "The Time Forecast", "🐬")
+=======
+        Page("./pages/model.py", "The Amwag Module", "🐳"),
+        Page("./pages/forecast.py", "The Amwag Forecast", "🐬"),
+        Page("./pages/cluster.py", "The Amwag Clusters", "🐬")
+>>>>>>> e0ad75013d4f96d630f69ebd36e13959be58edb4
     ]
 )
 ##
