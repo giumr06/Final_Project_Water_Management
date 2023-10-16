@@ -5,13 +5,13 @@ from sklearn import set_config
 set_config(transform_output="pandas")
 
 st.set_page_config(
-        page_title="The Amwag Forecast",
-        page_icon="🐬",
+        page_title="The Time Forecast",
+        page_icon="🐳",
         layout="centered"
 )
 
-st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Forecast </h1>", unsafe_allow_html=True)
-st.markdown("<h6 style='text-align: center;'> Here you can see forecasts from multivariate and univariate methods </h6>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Time Forecast</h1>", unsafe_allow_html=True)
+st.markdown("<h6 style='text-align: center;'> Here you can see a 5 years forecast from multivariate and univariate methods </h6>", unsafe_allow_html=True)
 
 X_fc = pd.read_csv("./data/forecast_2021_2025.csv", index_col=0)
 Y_fc = pd.read_csv("./data/forecast_2021_2025_targets.csv", index_col=0)
@@ -37,7 +37,7 @@ st.plotly_chart(targets_fig, use_container_width=True)
 # features
 var_name_dict = create_var_name_dict(X_past)
 para_list = var_name_dict.keys()
-selected_features = st.sidebar.multiselect("Choose a Variant:", para_list)
+selected_features = st.sidebar.multiselect("Choose the Variants:", para_list, placeholder="Multiple Selection")
 selected_features = [var_name_dict[sf] for sf in selected_features]
 
 X_fc_c = X_fc.query("country == @country")

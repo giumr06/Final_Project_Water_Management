@@ -6,13 +6,13 @@ from sklearn import set_config
 set_config(transform_output="pandas")
 
 st.set_page_config(
-        page_title="The Amwag Module",
-        page_icon="🐳",
+        page_title="The Ripple Effect",
+        page_icon="🐬",
         layout="centered"
 )
 
-st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Amwag Module </h1>", unsafe_allow_html=True)
-st.markdown("<h6 style='text-align: center;'> Here you can see the module prediction </h6>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Ripple Effect </h1>", unsafe_allow_html=True)
+st.markdown("<h6 style='text-align: center;'> Here you can see our module prediction</h6>", unsafe_allow_html=True)
 st.write("     ")
 X = pd.read_csv("./data/data_2020.csv", index_col=0)
 Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
@@ -20,17 +20,17 @@ Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
 var_name_dict = create_var_name_dict(X)
 
 country = st.sidebar.selectbox("Choose a Country", X.country)
-extra_paras = st.sidebar.selectbox("number of additional metrics", [0,1,2])
+extra_paras = st.sidebar.selectbox("Number of additional metrics", [0,1,2])
 para_list = var_name_dict.keys()
 para_0 = st.sidebar.selectbox("Choose a metric", para_list)
 para_0 = var_name_dict[para_0]
-para_0_val = st.sidebar.slider("fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
+para_0_val = st.sidebar.slider("Fraction of initial value", min_value=-1., max_value=1., value=0., step=0.01, format=None)
 
 para_dict ={para_0: para_0_val}
 for am in range(extra_paras):
         para_x = st.sidebar.selectbox(f"Choose additional metric {am+1}", [p for p in para_list if not var_name_dict[p] in para_dict])
         para_x = var_name_dict[para_x]
-        para_x_val = st.sidebar.slider(f"fraction of initial value (additional metric {am+1})", min_value=-1., max_value=1., value=0., step=0.01, format=None)
+        para_x_val = st.sidebar.slider(f"Fraction of initial value (additional metric {am+1})", min_value=-1., max_value=1., value=0., step=0.01, format=None)
         para_dict[para_x] = para_x_val
 
 model_dict = load_pickle('model')
