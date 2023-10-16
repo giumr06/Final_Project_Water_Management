@@ -10,14 +10,15 @@ def load_pickle(pk):
         loaded_file = pickle.load(file)
     return loaded_file
 
-def prepare_single_set(X, Y_true, country, para, para_val, year=None):
+def prepare_single_set(X, Y_true, country, para_dict, year=None):
     X_country = X.query("country == @country")
     Y_true_c = Y_true.query("country == @country")
     if year:
         X_country = X_country.query("year == @year")
         Y_true_c = Y_true_c.query("year == @year")
     X_new = X_country.copy(deep=True)
-    X_new[para].iloc[0] += para_val*X_new[para].iloc[0]
+    for para, para_val in para_dict.items():
+        X_new[para].iloc[0] += para_val*X_new[para].iloc[0]
 
     return X_country, X_new, Y_true_c
 
