@@ -22,7 +22,7 @@ var_name_dict = create_var_name_dict(X)
 
 clust = st.sidebar.selectbox("Choose the cluster", df_cluster.sort_values("Cluster").Cluster.unique())
 country = st.sidebar.selectbox("Choose a Country", df_cluster.query("Cluster == @clust")["Country Name"])
-extra_paras = st.sidebar.selectbox("number of additional metrics", [0,1,2])
+extra_paras = st.sidebar.selectbox("Number of additional metrics", [0,1,2])
 para_list = var_name_dict.keys()
 para_0 = st.sidebar.selectbox("Choose a metric", para_list)
 para_0 = var_name_dict[para_0]
