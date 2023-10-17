@@ -47,3 +47,8 @@ def create_var_name_dict(df):
     initial_names = df.drop(["country", "year"], axis=1).columns.tolist()
     var_name_dict = {n.replace("_"," ").replace("%", "percentage"): n for n in initial_names}
     return var_name_dict
+
+def create_reverse_var_name_dict(df):
+    initial_names = df.drop(["country", "year"], axis=1).columns.tolist()
+    var_name_dict = {n: n.replace("_"," ").replace("%", "percentage") for n in initial_names}
+    return var_name_dict

@@ -45,6 +45,11 @@ Y_new = get_single_predictions(model_dict, X_new)
 my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
 st.plotly_chart(my_fig)
 
+show_performance = st.sidebar.checkbox("show performance")
+if show_performance:
+        st.image("./app_images/prediction_performance_drinking_water.png")
+        st.image("./app_images/prediction_performance_gdp.png")
+        st.image("./app_images/prediction_performance_water_stress.png")
 
 left_co,cent_co,cent_2_co,right_co,right_2_co,last_co = st.columns(6)
 with last_co:

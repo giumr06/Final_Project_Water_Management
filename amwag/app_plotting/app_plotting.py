@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from amwag.app_utilities.app_utilities import *
 
 def create_barplot(Y_true, Y_pred, Y_new):
     fig = make_subplots(rows=1, cols=3, horizontal_spacing = 0.15)
@@ -123,11 +124,13 @@ def create_feature_timeline(X_fc, X_mfc, X_past, uni, multi, sfs):
     fig = make_subplots(rows=len(sfs), cols=1)
     fig.update_layout({"height":180+120*len(sfs)})
 
+    reverse_var_name_dict = create_reverse_var_name_dict(X_past)
+
     for i, feature in enumerate(sfs):
     # past
         fig.add_trace(
             go.Scatter(x=X_past.year ,y=X_past[feature],
-            name=feature),
+            name=reverse_var_name_dict[feature]),
             row=i+1, col=1)
         fig.update_yaxes(title_text=df_units[feature].iloc[0], row=i+1, col=1)
     
