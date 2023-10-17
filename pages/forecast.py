@@ -51,6 +51,13 @@ if len(selected_features)>0:
 
     st.plotly_chart(feature_fig, use_container_width=True)
 
+show_mape = st.sidebar.checkbox("show MAPE values")
+if show_mape:
+        st.image("./app_images/forecast_mape_values.png")
+show_true_pred = st.sidebar.checkbox("show true vs. predicted values")
+if show_true_pred:
+        st.image("./app_images/forecast_performance_in_one.png")
+
 left_co,cent_co,cent_2_co,right_co,right_2_co,last_co = st.columns(6)
 with last_co:
         st.image("./app_images/wave_2.png",width=175)
