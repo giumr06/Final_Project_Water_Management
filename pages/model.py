@@ -5,23 +5,30 @@ from amwag.app_plotting.app_plotting import *
 from sklearn import set_config
 set_config(transform_output="pandas")
 
+#set up fourth page UI
 st.set_page_config(
         page_title="The Ripple Effect",
         page_icon="🐬",
         layout="centered"
 )
 
+#add page header and sub-header
 st.markdown("<h1 style='text-align: center; color: ##113f67;'>The Ripple Effect </h1>", unsafe_allow_html=True)
 st.markdown("<h6 style='text-align: center;'> Here you can see our module prediction</h6>", unsafe_allow_html=True)
 st.write("     ")
+
+#set data frames with target and cluster data
 X = pd.read_csv("./data/data_2020.csv", index_col=0)
 Y_true = pd.read_csv("./data/targets_2020.csv", index_col=0)
 df_cluster = pd.read_csv("./data/heir_last_10.csv", encoding='ISO-8859-1')
 
 var_name_dict = create_var_name_dict(X)
 
+#enable options to select cluster and country within that cluster in sidebar
 clust = st.sidebar.selectbox("Choose the cluster", df_cluster.sort_values("Cluster").Cluster.unique())
 country = st.sidebar.selectbox("Choose a Country", df_cluster.query("Cluster == @clust")["Country Name"])
+
+#enable options to select feature(s), number of features and feature values in sidebar
 extra_paras = st.sidebar.selectbox("number of additional metrics", [0,1,2])
 para_list = var_name_dict.keys()
 para_0 = st.sidebar.selectbox("Choose a metric", para_list)
@@ -35,8 +42,10 @@ for am in range(extra_paras):
         para_x_val = st.sidebar.slider(f"Fraction of initial value (additional metric {am+1})", min_value=-1., max_value=1., value=0., step=0.01, format=None)
         para_dict[para_x] = para_x_val
 
+#load pickle file containing the model 
 model_dict = load_pickle('model')
 
+#create data sets for model based on user inputs and generate plots with resulting predictions
 X_country, X_new, Y_true_c = prepare_single_set(X, Y_true, country, para_dict)
 
 Y_pred = get_single_predictions(model_dict, X_country)
@@ -45,6 +54,7 @@ Y_new = get_single_predictions(model_dict, X_new)
 my_fig = create_barplot(Y_true_c, Y_pred, Y_new)
 st.plotly_chart(my_fig)
 
+#enable option to show model performance plots
 show_performance = st.sidebar.checkbox("show performance")
 if show_performance:
         st.image("./app_images/prediction_performance_drinking_water.png")
