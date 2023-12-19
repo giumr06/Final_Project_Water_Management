@@ -15,3 +15,7 @@
 - The dataset used for this project can be found in the folder "data" that is included in this repository.
 
 - At the [column descriptions](https://www.fao.org/aquastat/en/databases/glossary/) you will be able to find an explanation for the meaning of each category present in the original data sets.
+
+# App showcase:
+
+![](https://github.com/giumr06/Final_Project_Water_Management/blob/MBL/Presentation/showcase.gif)
