@@ -1,13 +1,15 @@
 import streamlit as st
 from st_pages import Page, show_pages
 
+#set up first page UI
 st.set_page_config(
         page_title="home",
         page_icon="🌊",
         layout="centered",
         initial_sidebar_state="expanded"
 )
-#
+
+#add page selection to sidebar
 show_pages(
     [
         Page("home.py", "Home", "🌊"),
@@ -17,12 +19,14 @@ show_pages(
 
     ]
 )
-##
+
+#add page sub-sections to sidebar
 home_page = st.sidebar.radio(
     "Select",
     ["The Project", "About us"],
     captions = ["Water Management", "The Amwag Group"])
 
+#write up "About us" section
 if home_page == 'About us':
     st.markdown("<h1 style='text-align: center; color: #385170;'>The Amwag Group  مجموعه امواج</h1>", unsafe_allow_html=True)
     st.markdown("  ")
@@ -80,7 +84,8 @@ if home_page == 'About us':
     with last_co_2:
         st.image("./app_images/wave_2.png",width=170)
         st.markdown("  ")
-        
+
+#write up project info section        
 if home_page == 'The Project':
         st.markdown("<h1 style='text-align: center; color: #385170;'>The Amwag  أمواج</h1>", unsafe_allow_html=True)
         st.markdown(
