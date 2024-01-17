@@ -18,4 +18,6 @@
 
 # App showcase:
 
+- https://amwagproject.streamlit.app/
+
 ![](https://github.com/giumr06/Final_Project_Water_Management/blob/MBL/Presentation/showcase.gif)
